@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <title>WISATA iNDONESIA</title>
+    <style>
+        body{
+         font-family: Arial, sans-serif;
+      background-color: #eaf6ff;
+      margin: 0;
+      padding: 20px;
+    }
+
+    h1 {
+      text-align: center;
+      color: #2c3e50;
+      margin-bottom: 40px;
+    }
+
+    .card-container {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .card {
+      background-color: white;
+      width: 300px;
+      border-radius: 15px;
+      overflow: hidden;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      cursor: pointer;
+      transition: transform 0.3s;
+    }
+
+    .card:hover {
+      transform: scale(1.05);
+    }
+
+    .card img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+    }
+
+    .card-title {
+      font-weight: bold;
+      padding: 15px;
+      text-align: center;
+    }
+
+    .card-desc {
+      padding: 0 15px 15px;
+      color: #333;
+    }
+
+    .detail-container {
+      max-width: 800px;
+      margin: 40px auto 0;
+      background-color: #ffffff;
+      border-radius: 15px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+      padding: 20px;
+      display: none;
+      animation: fadeIn 0.5s ease-in-out;
+    }
+
+    .detail-container img {
+      width: 100%;
+      border-radius: 10px;
+      margin-bottom: 15px;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    </style>
+</head>
+<body>
+  <h1> Tempat Wisata Di Indonesia</h1>
+
+  <div class="card-container">
+    <div class="card" onclick="showDetail('bali.jpg', 'Pantai Kuta, Bali', 'Pantai Kuta adalah salah satu ikon wisata paling terkenal di Bali, Indonesia. Pantai ini terkenal karena pasir putihnya yang halus, ombak yang cocok untuk berselancar, dan pemandangan matahari terbenam yang memukau. Terletak dekat Bandara Internasional Ngurah Rai, Pantai Kuta sangat mudah dijangkau oleh wisatawan. Di sepanjang pantai, terdapat berbagai fasilitas seperti hotel, restoran, tempat spa, toko oleh-oleh, dan penyewaan papan selancar.')">
+      <img src="bali.jpg" alt="Bali">
+      <div class="card-title">Pantai Kuta, Bali</div>
+    </div>
+
+    <div class="card" onclick="showDetail('borobudur.jpg', 'Candi Borobudur', 'Candi Borobudur adalah candi Buddha terbesar di dunia yang terletak di Magelang, Jawa Tengah. Candi ini dibangun sekitar abad ke-8 oleh Dinasti Syailendra dan merupakan warisan budaya dunia yang diakui oleh UNESCO. Struktur candi berbentuk stupa raksasa bertingkat dengan relief-relief yang menggambarkan ajaran Buddha dan kehidupan masyarakat zaman dahulu. Terdiri dari lebih dari 2.600 panel relief dan 500 patung Buddha, Candi Borobudur menjadi pusat ziarah umat Buddha dari seluruh dunia, terutama saat Hari Waisak.')">
+      <img src="borobudur.jpg" alt="Borobudur">
+      <div class="card-title">Candi Borobudur</div>
+    </div>
+
+    <div class="card" onclick="showDetail('raja AMpat.jpg', 'Raja Ampat', 'Raja Ampat adalah surga tersembunyi di ujung timur Indonesia, terletak di Papua Barat. Kepulauan ini terdiri dari lebih dari 1.500 pulau kecil dan karang yang tersebar di lautan biru jernih. Empat pulau utama adalah Waigeo, Batanta, Salawati, dan Misool. Raja Ampat dikenal sebagai lokasi diving terbaik di dunia karena keanekaragaman hayati lautnya yang luar biasa. Terdapat lebih dari 1.300 spesies ikan, 600 jenis terumbu karang, dan biota laut langka lainnya seperti hiu karpet, pari manta, dan penyu.')">
+      <img src="raja AMpat.jpg" alt="Raja Ampat">
+      <div class="card-title">Raja Ampat</div>
+    </div>
+  </div>
+
+  <!-- Detail Section (Tampil Saat Klik) -->
+  <div class="detail-container" id="detail">
+    <img id="detail-image" src="" alt="Detail Wisata">
+    <h2 id="detail-title"></h2>
+    <p id="detail-desc"></p>
+  </div>
+
+  <script>
+    function showDetail(image, title, desc) {
+      document.getElementById("detail-image").src = image;
+      document.getElementById("detail-title").innerText = title;
+      document.getElementById("detail-desc").innerText = desc;
+      document.getElementById("detail").style.display = "block";
+      window.scrollTo({ top: document.getElementById("detail").offsetTop - 20, behavior: "smooth" });
+    }
+  </script>
+
+</body>
+</html>
